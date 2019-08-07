@@ -45,13 +45,13 @@ public class MapperTest {
      */
     @Test
     public void testCRUD(){
-        System.out.println(departmentMapper);
+//        System.out.println(departmentMapper);
         //测试插入部门
 //        departmentMapper.insertSelective(new Department(null,"开发部"));
 //        departmentMapper.insertSelective(new Department(null,"测试部"));
 
         //测试插入单个员工
-        employeeMapper.insertSelective(new Employee(null,"Tommmmm","M","Tommmmm@qq.com",1));
+//        employeeMapper.insertSelective(new Employee(null,"Tommmmm","M","Tommmmm@qq.com",1));
 
         //批量插入若个员工
 //        EmployeeMapper mapper = sqlSession.getMapper(EmployeeMapper.class);
@@ -61,10 +61,15 @@ public class MapperTest {
 //
 //        }
 //        System.out.println("批量插入完成~");
-////        List<Employee> emps = employeeMapper.selectByExampleWithDept(null);
-//        List<Department> list = departmentMapper.selectByExample(null);
+        List<Employee> emps = employeeMapper.selectByExampleWithDept(null);
+        for(Employee emp : emps){
+            System.out.println(emp.getDepartment().getDeptName());
+        }
+//        List<Department> list = departmentMapper.selectByExampleW(null);
 //        for(Department dept : list){
 //            System.out.println(dept.getDeptName());
 //        }
+
+        System.out.println("测试成功~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
         }
     }

@@ -21,7 +21,11 @@ public class EmployeeService {
      */
     public List<Employee> getAll() {
         // TODO Auto-generated method stub
-        return employeeMapper.selectByExampleWithDept(null);
+        EmployeeExample employeeExample = new EmployeeExample();
+        /*设置排序方式 setOrderByClause*/
+        employeeExample.setOrderByClause("emp_id asc");
+
+        return employeeMapper.selectByExampleWithDept(employeeExample);
     }
 
     /**

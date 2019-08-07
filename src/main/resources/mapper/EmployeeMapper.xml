@@ -97,10 +97,10 @@
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
-<!--    <if test="orderByClause != null">-->
-<!--      order by ${orderByClause}-->
-<!--    </if>-->
-    order by emp_id
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+     <!--order by emp_id-->
   </select>
   <!-- Employee selectByPrimaryKeyWithDept(Integer empId); -->
   <select id="selectByPrimaryKeyWithDept" resultMap="WithDeptResultMap">
